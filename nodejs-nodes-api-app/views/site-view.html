@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col">
+        <h1>{{title}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <p><a href="/">Back to home</a></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                {{breadcrumbs}}
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                Site view menu
+            </div>
+            <ul class="list-group list-group-flush">
+                {{siblings}}
+            </ul>
+        </div>
+    </div>
+    <div class="col-9">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            Main content
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Viewing node: {{nodeTitle}}</h5>
+                            <p class="card-text">The node details are available here.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Node id is {{nodeId}}</li>
+                            <li class="list-group-item">Node path is {{nodePath}}</li>
+                            {{entry}}
+                        </ul>
+                        <div class="card-body">
+                            <h5 class="card-title">Node children</h5>
+                            {{children}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="row">
+    <div class="col">
+        <p>
+            <pre>{{nodeJson}}</pre>
+        </p>
+    </div>
+</div> -->

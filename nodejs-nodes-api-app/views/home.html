@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col">
+        <h1>{{title}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <h2>Connected to project: {{projectName}}</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <h2>Navigate to node explorer view via first nodes</h2>
+        <ul>
+            <li>Root node: {{rootNodeTitle}} -
+                <a href="/node-explorer?nodePath={{rootNodePath}}">using path {{rootNodePath}}</a> or
+                <a href="/node-explorer?nodeId={{rootNodeId}}">using node id {{rootNodeId}}</a>
+            </li>
+            <li>First root child node: {{node1Title}} -
+                <a href="/node-explorer?nodePath={{node1Path}}">using path {{node1Path}}</a> or
+                <a href="/node-explorer?nodeId={{node1Id}}">using node id</a>
+            </li>
+            <li>Second root child node: {{node2Title}} -
+                <a href="/node-explorer?nodePath={{node2Path}}">using path</a> or
+                <a href="/node-explorer?nodeId={{node2Id}}">using node id</a>
+            </li>
+            <li>Third root child node: {{node3Title}} -
+                <a href="/node-explorer?nodePath={{node3Path}}">using path {{node3Path}}</a> or
+                <a href="/node-explorer?nodeId={{node3Id}}">using node id {{node3Id}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <h2>Navigate to node explorer via a specific node</h2>
+        <div class="row">
+            <div class="col">
+                <form action="" method="POST">
+                    <div class="form-group row">
+                        <label for="nodeId" class="col-2 col-form-label">Node id:</label>
+                        <div class="col-4">
+                            <input type="text" class="form-control" placeholder="Enter target node id" id="nodeId" name="nodeId">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="nodePath" class="col-2 col-form-label">Node path:</label>
+                        <div class="col-4">
+                            <input type="text" class="form-control" placeholder="Enter target node path" id="nodePath"
+                                name="nodePath">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        Navigate to node</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <h2>Navigate to <a href="/siteview?nodeId={{rootNodeId}}">site view</a></h2>        
+    </div>
+</div>

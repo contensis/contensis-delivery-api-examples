@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col">
+        <h1>{{title}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <h2>Viewing node: {{nodeTitle}}</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <p><a href="/">Back to home</a></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <form action="" method="POST">
+            <div class="form-group row">
+                <label for="nodeDepth" class="col-2 col-form-label">Node depth:</label>
+                <div class="col-4">
+                    <input type="text" class="form-control" placeholder="Enter node depth (0 is default)" id="nodeDepth"
+                        name="nodeDepth" aria-describedby="nodeDepthHelp">
+                    <small id="nodeDepthHelp" class="form-text text-muted">
+                        Used in "Refresh node", "Get node parent", "Get node ancestor at level"</small>
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <label for="startLevel" class="col-2 col-form-label">Start level:</label>
+                <div class="col-4">
+                    <input type="text" class="form-control" placeholder="Enter start level (1 is default)" id="startLevel"
+                        name="startLevel" aria-describedby="startLevelHelp">
+                    <small id="startLevelHelp" class="form-text text-muted">
+                        Used in "Get node ancestor at level", "Get node ancestors"</small>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="entryId" class="col-2 col-form-label">Entry id:</label>
+                <div class="col-4">
+                    <input type="text" class="form-control" placeholder="Enter entry id" id="entryId" name="entryId"
+                        aria-describedby="entryIdHelp">
+                    <small id="entryIdHelp" class="form-text text-muted">
+                        Used in "Get nodes by entry id"</small>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm">
+                Refresh node</button>
+            <button type="submit" id="byEntryId" name="byEntryId" class="btn btn-secondary btn-sm" value="byEntryId">
+                Get nodes by entry id</button>
+            <button type="submit" id="children" name="children" class="btn btn-secondary btn-sm" value="children">
+                Get node children</button>
+            <button type="submit" id="parent" name="parent" class="btn btn-secondary btn-sm" value="parent">
+                Get node parent</button>
+            <button type="submit" id="ancestor" name="ancestor" class="btn btn-secondary btn-sm" value="ancestor">
+                Get node ancestor at level</button>
+            <button type="submit" id="ancestors" name="ancestors" class="btn btn-secondary btn-sm" value="ancestors">
+                Get node ancestors</button>
+            <button type="submit" id="siblings" name="siblings" class="btn btn-secondary btn-sm" value="siblings">
+                Get node siblings</button>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <p>
+            <pre>{{nodeJson}}</pre>
+        </p>
+    </div>
+</div>
