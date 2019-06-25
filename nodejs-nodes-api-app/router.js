@@ -56,16 +56,16 @@ class Router {
         title,
         projectName: project.name,
         rootNodeId: rootNode.id,
-        rootNodeTitle: rootNode.title,
+        rootNodeTitle: rootNode.displayName,
         rootNodePath: rootNode.path,
         node1Id: rootNode.children[0].id,
-        node1Title: rootNode.children[0].title,
+        node1Title: rootNode.children[0].displayName,
         node1Path: rootNode.children[0].path,
         node2Id: rootNode.children[1].id,
-        node2Title: rootNode.children[1].title,
+        node2Title: rootNode.children[1].displayName,
         node2Path: rootNode.children[1].path,
         node3Id: rootNode.children[2].id,
-        node3Title: rootNode.children[2].title,
+        node3Title: rootNode.children[2].displayName,
         node3Path: rootNode.children[2].path,
       }, res);
       Render.view("footer", {}, res);
@@ -187,7 +187,7 @@ class Router {
       }, res);
       Render.view("node-explorer", {
         title,
-        nodeTitle: !!node ? node.title : 'Not Found',
+        nodeTitle: !!node ? node.displayName : 'Not Found',
         nodeJson
       }, res);
       Render.view("footer", {}, res);
@@ -228,16 +228,16 @@ class Router {
       let ancestorNodes = await nodesApi.getAncestors(node.id, 1);
       let breadcrumbs = '';
       ancestorNodes.forEach(ancestorNode => {
-        breadcrumbs += `<li class="breadcrumb-item"><a href="/siteview?nodeId=${ancestorNode.id}">${ancestorNode.title}</a></li>`;
+        breadcrumbs += `<li class="breadcrumb-item"><a href="/siteview?nodeId=${ancestorNode.id}">${ancestorNode.displayName}</a></li>`;
       });
-      breadcrumbs += `<li class="breadcrumb-item active" aria-current="page">${node.title}</li>`;
+      breadcrumbs += `<li class="breadcrumb-item active" aria-current="page">${node.displayName}</li>`;
 
       let siblingNodes = await nodesApi.getSiblings(node.id);
       let siblings = '';
       siblingNodes.forEach(siblingNode => {
         siblings +=
           `<li class="list-group-item">
-            <a href="/siteview?nodePath=${siblingNode.path}" class="card-link">${siblingNode.title}</a>
+            <a href="/siteview?nodePath=${siblingNode.path}" class="card-link">${siblingNode.displayName}</a>
           </li>`;
       });
 
@@ -248,7 +248,7 @@ class Router {
         childNodes.forEach(childNode => {
           children += `
           <li class="nav-item">
-            <a class="nav-link" href="/siteview?nodePath=${childNode.path}">${childNode.title}</a>
+            <a class="nav-link" href="/siteview?nodePath=${childNode.path}">${childNode.displayName}</a>
           </li>`;
         });
         children += '</ul>';
@@ -267,7 +267,7 @@ class Router {
         entry,
         children,
         nodeId: node.id,
-        nodeTitle: node.title,
+        nodeTitle: node.displayName,
         nodePath: node.path,
         nodeJson
       }, res);
