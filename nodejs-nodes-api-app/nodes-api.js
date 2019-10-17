@@ -41,7 +41,8 @@ class NodesApi {
 
             return this.client.nodes.get({
                 path: nodePath,
-                depth: nodeDepth
+                depth: nodeDepth,
+                allowPartialMatch: true
             });
         }
 
