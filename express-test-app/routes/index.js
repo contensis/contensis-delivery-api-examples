@@ -3,8 +3,6 @@ var router = express.Router();
 
 var Client = require('contensis-delivery-api').Client;
 
-global.fetch = require("node-fetch");
-
 /* GET home page. */
 router.get('/', function (req, res, next) {
   var client = Client.create({

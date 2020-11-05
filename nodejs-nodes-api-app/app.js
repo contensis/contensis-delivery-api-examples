@@ -1,9 +1,6 @@
 const http = require('http');
 const Router = require('./router');
 
-// workaround for making fetch available in Node.js
-global.fetch = require("node-fetch");
-
 class App {
   constructor() {
     this.port = 3000;
